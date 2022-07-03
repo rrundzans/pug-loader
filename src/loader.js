@@ -14,8 +14,7 @@ const { getQueryData, injectExternalData } = require('./utils');
 const { executeTemplateFunctionException } = require('./exeptions');
 
 const scriptTagQuery = '?isScript';
-const hmrRequest = path.join(__dirname, './hmr.js') + scriptTagQuery;
-
+const hmrRequest = path.join(__dirname, 'hmr.js').replace(/\\/g, "\\\\") + scriptTagQuery;
 /**
  * @typedef {Object} Loader
  * @property {function(file:string, templateFile: string): string} require
